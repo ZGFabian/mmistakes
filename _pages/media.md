@@ -78,7 +78,7 @@ Note: There is plugin called [`jekyll-image-size`](https://github.com/generalui/
 ### Video in header
 
 {: .btn .btn--primary}
-See this [page](_pages/video-header/).
+See this [page](/_pages/video-header/).
 
 ### Splash page
 
