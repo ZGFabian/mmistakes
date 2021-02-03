@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-03T09:16:47+01:00</updated><id>/feed.xml</id><title type="html">Lost and Found</title><subtitle>An amazing website.</subtitle><author><name>zgfabian</name></author><entry xml:lang="en"><title type="html">Video manipulating from the command line</title><link href="/linux/cli/video-manipulate/" rel="alternate" type="text/html" title="Video manipulating from the command line" /><published>2021-01-01T00:00:00+01:00</published><updated>2021-01-01T00:00:00+01:00</updated><id>/linux/cli/video-manipulate</id><content type="html" xml:base="/linux/cli/video-manipulate/">&lt;p&gt;There are several applications and online tools that can be used to convert, extract, resize, etc video content under GNU/Linux desktops. The following post focuses on command line utilities aka CLI tools.
+&amp;lt;!–&lt;/p&gt;
+
+&lt;!-- Courtesy of embedresponsively.com //--&gt;
+
+&lt;div class=&quot;responsive-video-container&quot;&gt;
+    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/tlgBgZGDmYs&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;–&amp;gt;&lt;/p&gt;
+&lt;h2 id=&quot;download-video-from-the-web-ytdl&quot;&gt;Download video from the web (ytdl)&lt;/h2&gt;
+&lt;!--
+
+
+
+
+
+
+
+&lt;!-- Courtesy of embedresponsively.com //--&gt;
+
+&lt;div class=&quot;responsive-video-container&quot;&gt;
+    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/XsxDH4HcOWA&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;–&amp;gt;
+The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ytdl&lt;/code&gt; CLI tool is part of the &lt;a href=&quot;&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pafy&lt;/code&gt; python package&lt;/a&gt;. Install with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install pafy&lt;/code&gt; command from a terminal. With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ytdl&lt;/code&gt; one can download a video from Youtube. Checkout available options with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ytdl -h&lt;/code&gt; (help).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Search for available formats with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-s&lt;/code&gt; option:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext full highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ pepin ~ → ytdl https://youtu.be/tlgBgZGDmYs -s
+Stream Type    Format Quality         Size            
+------ ----    ------ -------         ----            
+1      normal  mp4    [640x360]       12 MB           
+2      normal  mp4    [1280x720]      25 MB           
+3      audio   webm   [160k]           3 MB           
+4      audio   m4a    [128k]           3 MB           
+5      audio   webm   [70k]            2 MB           
+6      audio   webm   [50k]            1 MB 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download the chosen format (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-n N&lt;/code&gt;) to folder of your choice (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-o O&lt;/code&gt;). &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O&lt;/code&gt; is a path string like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/Downloads&lt;/code&gt; or whatever. In the example below I have downloaded a video mp4 (640x360) stream to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jimmy.mp4&lt;/code&gt; file that is located in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/Downloads/jimmy/&lt;/code&gt; directory.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ pepin ~ → ytdl https://youtu.be/tlgBgZGDmYs -n 1 -o ~/Downloads/jimmy/jimmy.mp4
+-Downloading 'Jimmy Takes a Wild Ride | Yellowstone Season 1 | Paramount Network.mp4' [13,001,347 Bytes]
+-Quality: 640x360; Format: mp4
+
+Done
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;an-alternative-tool-youtube-dl&quot;&gt;An alternative tool: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;youtube-dl&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;youtube-dl&lt;/code&gt; is a more general and much more complex tool compared to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ytdl&lt;/code&gt;. It is available from package managers of major Linux distros. On Arch based systems you can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo pacman -S youtube-dl&lt;/code&gt; command to install. Visit &lt;a href=&quot;https://ytdl-org.github.io/youtube-dl/index.html&quot;&gt;project page&lt;/a&gt; for alternative install methods and detailed documentation.&lt;/p&gt;
+
+&lt;h2 id=&quot;download-subtitles-from-youtube-with-youtube-dl&quot;&gt;Download subtitles from Youtube with youtube-dl&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--list-subs&lt;/code&gt; option is used to list available languages and formats. So use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;youtube-dl --list-subs URL&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;youtube-dl --write-sub --sub-lang en --skip-download https://youtu.be/tlgBgZGDmYs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above command downloads an (English) plain text file in &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API&quot;&gt;vtt format&lt;/a&gt;. You can add this file to video players (such as mpv) to show subtitles or process/analyse the text.&lt;/p&gt;
+
+&lt;h2 id=&quot;download-part-of-a-video-youtube-dl&quot;&gt;Download part of a video (youtube-dl)&lt;/h2&gt;
+
+&lt;p&gt;You have to download the whole video (either with ytdl or youtube-dl) and use ffmpeg.
+Cf. &lt;a href=&quot;#&quot;&gt;this earlier post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;cut-out-part-of-a-video&quot;&gt;Cut out part of a video&lt;/h3&gt;
+
+&lt;p&gt;There is an easy to use &lt;a href=&quot;https://www.dropbox.com/s/o88mgp2jznpywt3/vcp?dl=0&quot;&gt;bash script&lt;/a&gt; based on &lt;a href=&quot;https://ffmpeg.org/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt;&lt;/a&gt;. The script was written by a &lt;a href=&quot;https://www.reddit.com/r/youtubedl/comments/cf4fzu/download_time_range/eu7smeb?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3&quot;&gt;reddit user&lt;/a&gt;. Download it from Dropbox to a folder at your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$PATH&lt;/code&gt; (e.g.  ~/.local/bin) and give executable permission with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chmod +x&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;usage: vcp [ --scale WIDTH:HEIGHT ] [ --aspect X:Y ] START END INFILE OUTFILE
+
+Copies part of video file INFILE to OUTFILE, starting at time START, and ending
+at time END.  Only one video and one audio stream is copied (see the ffmpeg
+docs for how it chooses the streams, but ffmpeg defaults to the highest quality
+streams).
+
+START/END have the format [HH:][MM:]SS[.s...], where HH is hours, MM is
+minutes, SS is seconds, and s is a decimal fraction of a second.  If
+STARTTIME/ENDTIME is '-', the actual start/end (respectively) time of the
+video is used.
+
+--aspect  =&amp;gt;  Sets the aspect ratio at the container level.  Does not
+              transcode video.
+
+--scale   =&amp;gt;  Scales video to new WIDTH and HEIGHT (in pixels) without
+              changing the aspect ratio.  NOTE: This transcodes the video!
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The next example cut out 7 seconds from jimmy.mp4 that I have downloaded previously.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vcp 1:03 1:10 jimmy.mp4 jimmy-out1.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;However, for some reasons I couldn’t use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aspect&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scale&lt;/code&gt; options.&lt;/p&gt;
+
+&lt;!-- 
+### Create gif
+
+
+Once you have a (short) video you can use `gifski` to create gif. (Gifski is a tool written in rust programming language.) Note if you do not compile the program with video support, you need to convert the clip to picture frames first with ffmpeg.
+
+1. To compile gifski with video support you must run: `cargo install gifski --features=video`. However it is not an easy task, as it may sounds. I am not going to encourage you to do so. Just follow the developer's [instructions](https://github.com/ImageOptim/gifski/blob/main/README.md#with-built-in-video-support):
+
+&gt; &quot;You must have ffmpeg and libclang installed, both with their C headers intalled in default system include paths. Details depend on the platform and version, but you usually need to install packages such as libavformat-dev, libavfilter-dev, libavdevice-dev, libclang-dev, clang. Please note that installation of these dependencies may be quite difficult. Especially on macOS and Windows it takes expert knowledge to just get them installed without wasting several hours on endless stupid installation and compilation errors, which I can't help with.&quot;
+
+If you are willing to face difficulties than you will need to install `cargo`. Use your package manager to do so. On Arch (and other Arch-based distros, like Manjaro) you can always consult with [ArchWiki](https://wiki.archlinux.org/index.php/rust). This is the end of my current knowledge. Here be dragons afterwards. 
+
+2. Create picture frames
+
+
+
+3. Convert frames to gif
+--&gt;
+
+&lt;h2 id=&quot;related-cli-projects&quot;&gt;Related CLI projects&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/soimort/you-get&quot;&gt;you-get&lt;/a&gt; - a python based command-line utility to download media contents (videos, audios, images) from the Web.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/ytdl&quot;&gt;ytdl-npm&lt;/a&gt; - is a youtube downloader written in Javascript. Browse source at &lt;a href=&quot;https://github.com/fent/node-ytdl&quot;&gt;Github&lt;/a&gt;.
+Naming is somewhat confusing. This is different from aforementioned &lt;a href=&quot;https://pypi.org/project/pafy/&quot;&gt;python’s pafy library&lt;/a&gt;, that also provides a command line tool (ytdl) for downloading Youtube content.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>zgfabian</name></author><category term="Linux" /><category term="CLI" /><category term="CLI" /><category term="video editing" /><category term="subtitles" /><category term="ffmpeg" /><category term="ytdl" /><category term="youtube-dl" /><category term="gifski" /><summary type="html">There are several applications and online tools that can be used to convert, extract, resize, etc video content under GNU/Linux desktops. The following post focuses on command line utilities aka CLI tools. &amp;lt;!– –&amp;gt; Download video from the web (ytdl) –&amp;gt; The ytdl CLI tool is part of the pafy python package. Install with pip install pafy command from a terminal. With ytdl one can download a video from Youtube. Checkout available options with ytdl -h (help).</summary></entry><entry xml:lang="en"><title type="html">Over or below the grey lines</title><link href="/data/mortality/" rel="alternate" type="text/html" title="Over or below the grey lines" /><published>2020-10-12T00:00:00+02:00</published><updated>2020-10-12T00:00:00+02:00</updated><id>/data/mortality</id><content type="html" xml:base="/data/mortality/">&lt;p&gt;Comparison of current and past mortality data shows the net death cost of current pandemic. Hungarian data on the bulk number of total deaths for the first eight months were positive. “Positive” is in a sense of time and space comparisons.&lt;/p&gt;
+
+&lt;p&gt;Kieran Healy (@kjhealy) recently &lt;a href=&quot;https://twitter.com/kjhealy/status/1313276959263162368&quot; target=&quot;blank&quot;&gt;tweeted&lt;/a&gt; and &lt;a href=&quot;https://kieranhealy.org/blog/archives/2020/09/24/us-excess-mortality/&quot; target=&quot;_blank&quot;&gt;published&lt;/a&gt; some shocking charts on US weekly mortality numbers that showed the high cost of current pandemic in terms of mortality surplus. Compared to previous years the overall picture looks like this (&lt;em&gt;Figure 1&lt;/em&gt;):&lt;/p&gt;
+
+&lt;h3 id=&quot;figure-1&quot;&gt;Figure 1&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/img/20-10-07-mortality/USAmortality.jpg&quot;&gt;&lt;img src=&quot;/assets/img/20-10-07-mortality/USAmortality.jpg&quot; alt=&quot;US weekly mortality by @kjhealy&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;He added then: “Everyone under that red line was a real person. Hundreds of thousands of people are dead, and every one of them was as real as you. Brave or fearful, weak or tough, flamboyant or shy, the virus doesn’t give a shit.” It was directed toward those who do not believe the mortal nature of COVID-19.&lt;/p&gt;
+
+&lt;p&gt;I have plotted a similar chart for Hungary using &lt;a href=&quot;https://www.ksh.hu/docs/hun/xstadat/xstadat_evkozi/e_wnh004a.html&quot; target=&quot;_blank&quot;&gt;weekly mortality data from the Central Statistical Office&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The overall picture of 2020 mortality is still favorable (&lt;em&gt;Figure 2&lt;/em&gt;) - the red line is under the grey ones at the time of the writing of this post. However, take a look at the infection curve which begun to rise precipitously (&lt;em&gt;Figure 3&lt;/em&gt;) in Hungary and in its neighbours while the curve seems to be flattening in the US.&lt;/p&gt;
+&lt;h3 id=&quot;figure-2&quot;&gt;Figure 2&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/img/20-10-07-mortality/hu-mortality-w36-2020-10-12.png&quot;&gt;&lt;img src=&quot;/assets/img/20-10-07-mortality/hu-mortality-w36-2020-10-12.png&quot; alt=&quot;Hungary-weekly-mortality&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;figure-3&quot;&gt;Figure 3&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/img/20-10-07-mortality/c19-cases-2020-10-12.png&quot;&gt;&lt;img src=&quot;/assets/img/20-10-07-mortality/c19-cases-2020-10-12.png&quot; alt=&quot;Hungary-new-cases
+&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 4 shows the monthly mortality rates per thousands. Data is from the CSO STADAT &lt;a href=&quot;https://www.ksh.hu/docs/hun/xstadat/xstadat_evkozi/e_wdsd001a.html&quot; target=&quot;_blank&quot;&gt;1.1 table&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;figure-4&quot;&gt;Figure 4&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/img/20-10-07-mortality/hu-mortality-rate-2020-10-12.png&quot;&gt;&lt;img src=&quot;/assets/img/20-10-07-mortality/hu-mortality-rate-2020-10-12.png&quot; alt=&quot;Hungary-mortality-rates
+&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that Figures 1, 2 and 4 comparing historical trends within one country and doesn’t tell us much about cross-country differences.&lt;/p&gt;
+
+&lt;p&gt;With different methodologies similar comparisons are available for European countries from the &lt;a href=&quot;https://www.euromomo.eu/graphs-and-maps&quot;&gt;EUROMOMO&lt;/a&gt; project.&lt;/p&gt;
+
+&lt;p&gt;Sources:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/assets/img/20-10-07-mortality/weekly-mortality.R&quot;&gt;R-script&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Data:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/assets/img/20-10-07-mortality/weekly-total-deaths.csv&quot;&gt;weekly rates&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/assets/img/20-10-07-mortality/monthly-deaths.csv&quot;&gt;monthly rates&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>zgfabian</name></author><category term="data" /><category term="ggplot" /><category term="COVID-19" /><category term="mortality" /><category term="Hungary" /><category term="USA" /><category term="EUROMOMO" /><summary type="html">Comparison of current and past mortality data shows the net death cost of current pandemic. Hungarian data on the bulk number of total deaths for the first eight months were positive. “Positive” is in a sense of time and space comparisons.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/hu-mortality-w36-small.png" /><media:content medium="image" url="/hu-mortality-w36-small.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">This post demonstrates post content styles</title><link href="/junk/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="This post demonstrates post content styles" /><published>2016-05-20T00:00:00+02:00</published><updated>2016-05-20T00:00:00+02:00</updated><id>/junk/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="/junk/this-post-demonstrates-post-content-styles/">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-great-heading-h2&quot;&gt;Some great heading (h2)&lt;/h2&gt;
+
+&lt;p&gt;Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu.&lt;/p&gt;
+
+&lt;p&gt;Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;h2 id=&quot;another-great-heading-h2&quot;&gt;Another great heading (h2)&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-great-subheading-h3&quot;&gt;Some great subheading (h3)&lt;/h3&gt;
+
+&lt;p&gt;Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum.&lt;/p&gt;
+
+&lt;p&gt;Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-great-subheading-h3-1&quot;&gt;Some great subheading (h3)&lt;/h3&gt;
+
+&lt;p&gt;Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This quote will &lt;em&gt;change&lt;/em&gt; your life. It will reveal the &lt;i&gt;secrets&lt;/i&gt; of the universe, and all the wonders of humanity. Don’t &lt;em&gt;misuse&lt;/em&gt; it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-great-subheading-h3-2&quot;&gt;Some great subheading (h3)&lt;/h3&gt;
+
+&lt;p&gt;Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Hello, World!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h4 id=&quot;you-might-want-a-sub-subheading-h4&quot;&gt;You might want a sub-subheading (h4)&lt;/h4&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h4 id=&quot;but-its-probably-overkill-h4&quot;&gt;But it’s probably overkill (h4)&lt;/h4&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h5 id=&quot;could-be-a-smaller-sub-heading-pacman-h5&quot;&gt;Could be a smaller sub-heading, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pacman&lt;/code&gt; (h5)&lt;/h5&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h6 id=&quot;small-yet-significant-sub-heading--h6&quot;&gt;Small yet significant sub-heading  (h6)&lt;/h6&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h3 id=&quot;oh-hai-an-unordered-list&quot;&gt;Oh hai, an unordered list!!&lt;/h3&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First item, yo&lt;/li&gt;
+  &lt;li&gt;Second item, dawg&lt;/li&gt;
+  &lt;li&gt;Third item, what what?!&lt;/li&gt;
+  &lt;li&gt;Fourth item, fo sheezy my neezy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;oh-hai-an-ordered-list&quot;&gt;Oh hai, an ordered list!!&lt;/h3&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First item, yo&lt;/li&gt;
+  &lt;li&gt;Second item, dawg&lt;/li&gt;
+  &lt;li&gt;Third item, what what?!&lt;/li&gt;
+  &lt;li&gt;Fourth item, fo sheezy my neezy&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;headings-are-cool-h2&quot;&gt;Headings are cool! (h2)&lt;/h2&gt;
+
+&lt;p&gt;Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;p&gt;Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;p&gt;Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.&lt;/p&gt;
+
+&lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title 1&lt;/th&gt;
+      &lt;th&gt;Title 2&lt;/th&gt;
+      &lt;th&gt;Title 3&lt;/th&gt;
+      &lt;th&gt;Title 4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem&lt;/td&gt;
+      &lt;td&gt;lorem ipsum&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title 1&lt;/th&gt;
+      &lt;th&gt;Title 2&lt;/th&gt;
+      &lt;th&gt;Title 3&lt;/th&gt;
+      &lt;th&gt;Title 4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem&lt;/td&gt;
+      &lt;td&gt;lorem ipsum&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem ipsum dolor sit amet&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit amet consectetur&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit amet&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem ipsum dolor&lt;/td&gt;
+      &lt;td&gt;lorem ipsum&lt;/td&gt;
+      &lt;td&gt;lorem&lt;/td&gt;
+      &lt;td&gt;lorem ipsum&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lorem ipsum dolor&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit amet&lt;/td&gt;
+      &lt;td&gt;lorem ipsum dolor sit amet consectetur&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="content" /><category term="styles," /><category term="Jekyll" /><summary type="html">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</summary></entry></feed>
