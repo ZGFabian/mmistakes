@@ -72,13 +72,13 @@ Note: There is plugin called [`jekyll-image-size`](https://github.com/generalui/
 **Tip:** if you’d like to start the video at a particular timestamp, you can append ?start=110 (for instance) to the video id in order to have the video start at 1:50.
 **Note:** Vimeo and google drive contents are also supported.
 
-### Just simple iframe embedding (Coub example)
+### Just embed an iframe as html (Coub example)
 <iframe src="//coub.com/embed/2mts8f?muted=false&autostart=false&originalSize=false&startWithHD=false" frameborder="0" width="640" height="360" allow="autoplay"></iframe>
 
 ### Video in header
 
 {: .btn .btn--primary}
-See this [page](/_pages/video-header/).
+See this [page](_pages/video-header/).
 
 ### Splash page
 
