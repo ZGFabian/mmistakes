@@ -3,7 +3,8 @@ layout: single
 title: Video manipulating from the command line
 subtitle: Linux examples
 categories: [Linux, CLI]
-tags: [CLI, subtitles, ffmpeg, ytdl, youtube-dl]
+tags: [CLI, subtitles, ffmpeg, ytdl, youtube-dl, slideshow]
+toc: true
 lang: en
 # image: hu-mortality-w36-small.png
 # comments: true
@@ -22,14 +23,14 @@ The `ytdl` CLI tool is part of the [`pafy` python package](). Install with `pip 
 {: .full}
 ```
 λ pepin ~ → ytdl https://youtu.be/tlgBgZGDmYs -s
-Stream Type    Format Quality         Size            
------- ----    ------ -------         ----            
-1      normal  mp4    [640x360]       12 MB           
-2      normal  mp4    [1280x720]      25 MB           
-3      audio   webm   [160k]           3 MB           
-4      audio   m4a    [128k]           3 MB           
-5      audio   webm   [70k]            2 MB           
-6      audio   webm   [50k]            1 MB 
+Stream Type    Format Quality         Size
+------ ----    ------ -------         ----
+1      normal  mp4    [640x360]       12 MB
+2      normal  mp4    [1280x720]      25 MB
+3      audio   webm   [160k]           3 MB
+4      audio   m4a    [128k]           3 MB
+5      audio   webm   [70k]            2 MB
+6      audio   webm   [50k]            1 MB
 ```
 
 2. Download the chosen format (`-n N`) to folder of your choice (`-o O`). `O` is a path string like `~/Downloads` or whatever. In the example below I have downloaded a video mp4 (640x360) stream to `jimmy.mp4` file that is located in `~/Downloads/jimmy/` directory. 
@@ -88,6 +89,11 @@ vcp 1:03 1:10 jimmy.mp4 jimmy-out1.mp4
 ```
 However, for some reasons I couldn't use `aspect` and `scale` options.
 
+## Create a slideshow-like video
+
+This is how Luke Smith does with `imagemagick` and `ffmpeg`.
+{% include video id="4wM2VzubQoM" provider="youtube" %}
+ 
 <!-- 
 ### Create gif
 
