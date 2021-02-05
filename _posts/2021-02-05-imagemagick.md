@@ -15,3 +15,8 @@ convert
 
 
 ![png-image](/assets/img/20-10-07-mortality/hu-mortality-rate-2020-10-12.png)
+
+
+
+#### HTML image resized
+<img src="/assets/img/site/blabla-orange.png" alt="Blabla" width="50">
