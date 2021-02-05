@@ -1,14 +1,14 @@
 ---
-layout: posts 
+layout: single 
 title: Over or below the grey lines
 subtitle: Mortality in Hungary and in the USA during the pandemic
 categories: data
 tags: [ggplot, COVID-19, mortality, Hungary, USA, EUROMOMO]
 lang: en
-image: hu-mortality-w36-small.png
+# image: hu-mortality-w36-small.png
 # featured-image-alt: Number of death in HU 
-comments: true
-date: 2020-10-12
+# comments: true
+# date: 2020-10-12
 ---
 Comparison of current and past mortality data shows the net death cost of current pandemic. Hungarian data on the bulk number of total deaths for the first eight months were positive. "Positive" is in a sense of time and space comparisons. 
 
