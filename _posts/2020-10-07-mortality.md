@@ -16,7 +16,7 @@ Comparison of current and past mortality data shows the net death cost of curren
 Kieran Healy (@kjhealy) recently [tweeted](https://twitter.com/kjhealy/status/1313276959263162368){:target="blank"} and [published](https://kieranhealy.org/blog/archives/2020/09/24/us-excess-mortality/){:target="_blank"} some shocking charts on US weekly mortality numbers that showed the high cost of current pandemic in terms of mortality surplus. Compared to previous years the overall picture looks like this (*Figure 1*): 
 
 ### Figure 1
-[![US weekly mortality by @kjhealy](/assets/img/20-10-07-mortality/USAmortality.jpg)](/assets/img/20-10-07-mortality/USAmortality.jpg)
+![fig1](/assets/img/20-10-07-mortality/USAmortality.jpg)
 
 He added then: "Everyone under that red line was a real person. Hundreds of thousands of people are dead, and every one of them was as real as you. Brave or fearful, weak or tough, flamboyant or shy, the virus doesn't give a shit." It was directed toward those who do not believe the mortal nature of COVID-19.
 
