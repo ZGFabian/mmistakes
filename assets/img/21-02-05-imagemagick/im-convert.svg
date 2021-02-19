@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="342.36188mm"
+   height="101.22311mm"
+   viewBox="0.9 0.6 516.05915 152.57865"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="im-convert.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="629.18405"
+     inkscape:cy="497.34076"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     viewbox-x="0.9"
+     viewbox-y="0.6"
+     viewbox-width="712.58696"
+     viewbox-height="19.46481"
+     inkscape:window-width="1608"
+     inkscape:window-height="1000"
+     inkscape:window-x="30"
+     inkscape:window-y="28"
+     inkscape:window-maximized="0"
+     scale-x="1.50735">
+    <inkscape:grid
+       type="xygrid"
+       id="grid944" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="bg">
+    <rect
+       style="display:inline;fill:#d45500;stroke-width:1.13681"
+       id="rect928"
+       width="518.46558"
+       height="151.55147"
+       x="0.89999998"
+       y="0.60000002"
+       ry="3.7681355e-06"
+       rx="3.768135e-06"
+       inkscape:transform-center-x="63.444279"
+       inkscape:transform-center-y="48.600985"
+       inkscape:label="rect928" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-195.14465,-126.19893)"
+     style="display:inline">
+    <g
+       id="g898"
+       transform="translate(7.9763734)"
+       inkscape:label="g898">
+      <rect
+         style="fill:#999999;stroke-width:1.1069"
+         id="rect930"
+         width="231.31543"
+         height="135.59869"
+         x="196.04463"
+         y="134.77533"
+         ry="7.976387"
+         inkscape:transform-center-x="5.3453213"
+         rx="7.976387"
+         inkscape:label="rect930" />
+      <text
+         xml:space="preserve"
+         style="font-size:50.8px;line-height:0;font-family:ETBembo;-inkscape-font-specification:ETBembo;stroke-width:0.264583"
+         x="197.70598"
+         y="141.73572"
+         id="text835"><tspan
+           sodipodi:role="line"
+           id="tspan833"
+           x="197.70598"
+           y="141.73572"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.15;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"> </tspan><tspan
+           sodipodi:role="line"
+           x="197.70598"
+           y="155.00555"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           id="tspan866"> $ <tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+   id="tspan839">convert</tspan> -size 100x100 \</tspan><tspan
+           sodipodi:role="line"
+           x="197.70598"
+           y="172.47591"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           id="tspan844">           label:&quot; RGB colors&quot; \</tspan><tspan
+           sodipodi:role="line"
+           x="197.70598"
+           y="189.94627"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           id="tspan849">           canvas:<tspan
+   style="line-height:0.9;fill:#ff0000"
+   id="tspan859">red</tspan> \</tspan><tspan
+           sodipodi:role="line"
+           x="197.70598"
+           y="207.41663"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           id="tspan854">           xc:<tspan
+   style="line-height:0.9;fill:#00ff00"
+   id="tspan863">#00ff00</tspan> \</tspan><tspan
+           sodipodi:role="line"
+           x="197.70598"
+           y="224.88698"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           id="tspan858">           xc:<tspan
+   style="line-height:0.9;fill:#0000ff"
+   id="tspan873">rgb\(0,0,255\)</tspan> \</tspan><tspan
+           sodipodi:role="line"
+           x="197.70598"
+           y="242.35735"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           id="tspan861">           +append \</tspan><tspan
+           sodipodi:role="line"
+           x="197.70598"
+           y="259.8277"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           id="tspan864">           rgb-pal.png</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:50.8px;line-height:0;font-family:ETBembo;-inkscape-font-specification:ETBembo;stroke-width:0.264583"
+       x="445.94278"
+       y="142.60838"
+       id="text835-4"><tspan
+         sodipodi:role="line"
+         id="tspan833-3"
+         x="445.94278"
+         y="142.60838"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.15;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"> </tspan><tspan
+         sodipodi:role="line"
+         x="445.94278"
+         y="155.87822"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         id="tspan866-0"> # size of the canvas in pixels </tspan><tspan
+         sodipodi:role="line"
+         x="445.94278"
+         y="173.34857"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         id="tspan844-0"> # label - a title for your palette </tspan><tspan
+         sodipodi:role="line"
+         x="445.94278"
+         y="190.81894"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         id="tspan849-9"> # canvas color as text (string) </tspan><tspan
+         sodipodi:role="line"
+         x="445.94278"
+         y="208.28929"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         id="tspan854-5"> # xc color as hexadecimal number</tspan><tspan
+         sodipodi:role="line"
+         x="445.94278"
+         y="225.75964"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         id="tspan858-0"> # xc canvas color as rgb coordinates</tspan><tspan
+         sodipodi:role="line"
+         x="445.94278"
+         y="243.23001"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         id="tspan861-9"> # +append horizontally </tspan><tspan
+         sodipodi:role="line"
+         x="445.94278"
+         y="260.70035"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2014px;line-height:0.9;font-family:'SauceCodePro NF';-inkscape-font-specification:'SauceCodePro NF, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         id="tspan864-4"> # output file name</tspan></text>
+  </g>
+</svg>
