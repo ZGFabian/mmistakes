@@ -58,7 +58,7 @@ The image above, though 1200px wide, should not overflow the content area. It sh
 ![image-right]({{ site.baseurl }}/assets/img/site/image-alignment-300x200.jpg){: .align-right}
 
 
-#### Markdown image resized
+#### Markdown image
 ![Fox]({{ site.baseurl }}/assets/img/site/mrfox.jpg)
 
 {: .notice--info}
@@ -97,21 +97,24 @@ Note: There is plugin called [`jekyll-image-size`](https://github.com/generalui/
 
 ### Video in header
 
-{: .btn .btn--primary}
+{: .btn .btn--facebook}
 See this [page]({{ site.baseurl }}/_pages/media/video-header/).
 
 ### Splash pages
 
 are cool.
 
-{: .btn .btn--primary}
+{: .btn .btn--inverse}
 See example layout [here]({{ site.baseurl }}/_pages/media/splash-layout/).
 
 Minimal mistake [documentation](https://mmistakes.github.io/minimal-mistakes/splash-page/).
 
 ### Feature row
 
-Feature row, an extension of to splash layout is presented [here]({{ site.baseurl }}/post-archive-feature-rows/).
+Feature row, an extension of to splash layout is 
+
+{: .btn .btn--info}
+presented [here]({{ site.baseurl }}/post-archive-feature-rows/).
 
 
 ## Resources
