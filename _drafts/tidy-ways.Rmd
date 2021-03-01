@@ -1,0 +1,28 @@
+---
+title: "Tidy ways to implement base R things"
+layout:  single
+output:
+  markdown_document
+---
+
+```{r}
+library(dplyr)
+```
+
+Examples from [reddit](https://www.reddit.com/r/rstats/comments/lrobtx/can_you_chain_nondplyr_verbs/)
+
+```{r, eval=FALSE}
+df$Date <- as.Date(df$Date, format = "%m/%d/%Y")
+```
+
+is equivalent with:
+
+```{r, eval=FALSE}
+mutate(Date = as.Date(Date, format = "%m/%d/%Y") %>%
+```
+
+```{r}
+mtcars %>% .$cyl %>% unique()
+mtcars %>% pull(cyl) %>% unique()
+mtcars %>% select(cyl) %>% unique()
+```

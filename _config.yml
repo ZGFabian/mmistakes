@@ -157,6 +157,7 @@ include:
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
+  - "*.Rmd"
   - vendor
   - .asset-cache
   - .bundle
@@ -296,3 +297,5 @@ defaults:
     values:
       layout: single
       author_profile: true
+# head_scripts:
+#   - /assets/js/plotly-latest.min.js
