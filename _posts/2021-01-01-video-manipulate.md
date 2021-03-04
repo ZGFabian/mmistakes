@@ -59,7 +59,6 @@ The above command downloads an (English) plain text file in [vtt format](https:/
 
 ### Cut out part of a video
 You have to download the whole video (either with ytdl or youtube-dl) and use ffmpeg.
-Cf. [this earlier post](#).
 However, there is an easy to use [bash script](https://www.dropbox.com/s/o88mgp2jznpywt3/vcp?dl=0) based on [`ffmpeg`](https://ffmpeg.org/). The script was written by a [reddit user](https://www.reddit.com/r/youtubedl/comments/cf4fzu/download_time_range/eu7smeb?utm_source=share&utm_medium=web2x&context=3). Download it from Dropbox to a folder at your `$PATH` (e.g.  ~/.local/bin) and give executable permission with `chmod +x`. 
 
 ```

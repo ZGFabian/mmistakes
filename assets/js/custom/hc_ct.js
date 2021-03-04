@@ -1,4 +1,4 @@
-//$(function(){
+$(function(){
 	$('#container2').highcharts(
 {
   "chart": {
@@ -4196,4 +4196,4 @@
   }
 }
 );
-//});
+});
