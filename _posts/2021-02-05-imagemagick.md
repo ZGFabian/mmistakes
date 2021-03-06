@@ -5,6 +5,7 @@ layout: single
 classes: wide
 categories: Linux
 tags: [ImageMagick, color palette]
+image: assets/img/21-02-05-imagemagick/rgb-pal.png
 ---
 
 `ImageMagick` is a software suit to manipulate images mainly from command line interface (CLI)[^im]. It was created in 1987 and open-sourced in 1990. The `convert` command - among others - is a part of this application. Useful for converting, resizing an image and also useful to blur, crop, flip and much more. The full list of command line options is available [here](https://imagemagick.org/script/command-line-options.php). 
