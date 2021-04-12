@@ -1,0 +1,100 @@
+---
+title: "Internet"
+output:
+  md_document:
+    variant: gfm 
+    preserve_yaml: TRUE
+# excerpt: "I plotted EUROSTAT data with a few line of R codes using `eurostat` and `tidyverse`."
+layout: single
+categories:
+  - data
+tags: [ggplot, eurostat, R, V4 countries]
+image: # brent-rambo.jpg # for open graph protocol
+---
+{: .small}
+*Last modified on `r date()`*
+
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(fig.width = 7, fig.height = 7, fig.path="../assets/img/21-03-19-internet/")
+```
+
+```{r, libs, echo=TRUE, message=FALSE, results=FALSE}
+library(tidyverse)
+library(eurostat)
+# devtools::install_github("zgfabian/kimberlite")
+library(kimberlite)
+```
+ 
+```{r, p1, include=TRUE, message = FALSE}
+df <- read_csv("_data/isoc_ci_ifp_iu/isoc_ci_ifp_iu_1_Data.csv")
+df
+unique(df$GEO)
+unique(df$INDIC_IS)
+unique(df$IND_TYPE)
+unique(df$UNIT)
+unique(df$Value)
+paste(unique(df$GEO), collapse=", ")
+
+
+countries <- c("Belgium","Bulgaria","Czechia","Denmark","Germany (until 1990 former territory of the FRG)","Estonia","Ireland","Greece","Spain","France","Croatia","Italy","Cyprus","Latvia","Lithuania","Luxembourg","Hungary","Malta","Netherlands","Austria","Poland","Portugal","Romania","Slovenia","Slovakia","Finland","Sweden","Iceland","Norway","Switzerland","United Kingdom","Montenegro","North Macedonia","Albania","Serbia","Turkey","Bosnia and Herzegovina","Canada","United States","Japan","South Korea")
+
+df$Value[df$Value == ":"] <- NA
+df$Value[is.na(df$Value) == TRUE]
+df$Value[is.na(df$Value) == FALSE]
+
+df$Value <- as.numeric(df$Value)
+
+
+df2 <- df %>%
+  filter(GEO %in% countries) %>%
+  filter(TIME == 2020) %>%
+  filter(INDIC_IS == "Internet use: never") %>%
+  filter(UNIT == "Percentage of individuals")
+
+df2$GEO[df2$GEO == "Germany (until 1990 former territory of the FRG)"] <- "Germany"
+df2$GEO[df2$GEO == "Bosnia and Herzegovina"] <- "Bosnia"
+library(ggrepel)
+df3 <- df2 %>%
+  drop_na(Value)
+p1 <- df3 %>%
+  #  arrange(Value) %>%
+  ggplot(aes(x = reorder(GEO, Value), y = Value)) +
+  geom_col() +
+  geom_label(aes(label=Value), hjust=-0.5) +
+  scale_y_continuous(limits = c(0,25)) +
+  coord_flip() +
+  theme_kimberlite() +
+  labs(title = "Percent never use internet, 2020",
+       subtitle = "all individuals aged 16-74 years",
+       caption = "data source: Eurostat",
+       x = "", y = "")
+p1
+ggsave("_tmp/never-use.png", height = 12, width = 10, dpi = 150)
+
+df <- get_eurostat(id = "isoc_ci_ifp_iu", time_format = "num")
+unique(df$indic_is)
+
+```
+
+```{r, kbl, echo = FALSE, results="asis"}
+df1 %>%
+  #  filter(geo == "HU") %>%
+  pivot_wider(names_from = geo, values_from = values) %>%
+  select(-wstatus, -age, -sex) %>%
+  arrange(time) %>%
+  knitr::kable(., caption = "SMDR between 2005-2019")
+```
+
+{: .notice--info}
+**material deprivation rate** is the percentage of the population that cannot afford at least three of the following nine items: (1) to pay their rent, mortgage or utility bills; (2) to keep their home adequately warm; (3) to face unexpected expenses; (4) to eat meat or proteins regularly; (5) to go on holiday; (6) a television set; (7) a washing machine; (8) a car; (9) a telephone. **Severe material deprivation rate** is defined as the enforced inability to pay for at least four of the above-mentioned items. _Source:_ [EUROSTAT glossary](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_material_deprivation_rate)
+
+- Browse [Eurostat database](https://ec.europa.eu/eurostat/data/database)
+- Browse `ilc_mddd12` in the EUROSTAT [**Data Explorer**](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_mddd12&lang=en)
+- Browse `ilc_mddd12` in the EUROSTAT: [**Data Browser**](https://ec.europa.eu/eurostat/databrowser/view/ilc_mddd12/default/table?lang=en)
+
+[![screenshot]({{ site.baseurl }}/assets/img/21-02-22-eurostat/screenshot.png){: width="250px" .align-center}]({{ site.baseurl }}/assets/img/21-02-22-eurostat/screenshot.png)
+
+
+[Tutorial for the eurostat R package](http://ropengov.github.io/eurostat/articles/website/eurostat_tutorial.html)
+

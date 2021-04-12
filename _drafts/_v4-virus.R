@@ -2,7 +2,7 @@ library(tidyverse)
 library(ggthemes)
 library(ggfx)
 library(ggtext)
-
+library(kimberlite)
 # Weekly confirmed new cases per million OWID/JHU
 # Az új fertőzöttek száma hetente*, egy millió főre vetítve
 # A megelőző hét nap értékei összesítve
@@ -28,7 +28,7 @@ jhu4 %>%
   geom_line()
 
 
-jhu %>%
+p <- jhu %>%
   select(date, Czechia, Hungary, Poland, Slovakia) %>%
   filter(date >= "2020-11-10") %>%
   ggplot(aes(x=date)) +
@@ -45,7 +45,8 @@ jhu %>%
     geom_line(aes(y = Slovakia), color = "#005577", size = 3),
       sigma = unit(1, 'mm')
     ) +
-  theme_wsj() +
+#  theme_wsj() +
+  theme_kimberlite() +
   labs(title = "Cummulative weekly new COVID-19 cases per million",
        subtitle = "<span style='color:#02441d'>**Hungary**</span> compared to <span style='color:#972d15;'>**CZ**</span>, <span style='color:#f47735';>**PL**</span> and <span style='color:#005577;'>**SK**</span> since 2020-11-10",
        caption = "<span style='color:white;'>**data source: OWID|JHU**</span>") +
@@ -61,11 +62,102 @@ jhu %>%
       fill = "lightgrey"
     ),
     plot.caption = element_textbox(
+      size = 12,
       lineheight = 1,
       padding = margin(5.5, 5.5, 5.5, 5.5),
       margin = margin(0, 0, 5.5, 0),
       fill = "#005577"
-    ))
+    ),
+    axis.title = element_blank()
+  )
+p
+
+labelDF <- data.frame(
+  x = as.Date(c("2021-02-20", "2021-02-20", "2021-02-20")),
+  y = c(4100, 1500, 500),
+  labels = c("CZ", "SK", "HU")
+)
+
+
+
+max(jhu$date)
+# alpha(c("#02441d", "#972d15", "#f47735", "#005577"), alpha = 0.8)
+
+p2 <- jhu %>%
+  select(date, Czechia, Hungary, Poland, Slovakia) %>%
+  filter(date >= "2020-11-10") %>%
+  ggplot(aes(x=date)) +
+  geom_area(aes(y = Czechia), fill = "#972d15", alpha = 0.8) +
+  geom_area(aes(y = Poland), fill = "#f47735", alpha = 0.8) +
+  geom_area(aes(y = Slovakia), fill = "#005577", alpha = 0.8) +
+  geom_col(aes(y = Hungary), fill = "#02441d", alpha =0.8, show.legend = TRUE) +
+  scale_x_date(breaks = as.Date(c("2020-11-10", "2020-12-10", "2021-01-10", "2021-02-10", "2021-03-10"))) +
+  labs(title = "Cummulative weekly new COVID-19 cases per million",
+      subtitle = "<span style='color:#02441d'>**Hungary**</span> compared to <span style='color:#972d15;'>**CZ**</span>, <span style='color:#f47735';>**PL**</span> and <span style='color:#005577;'>**SK**</span> since 2020-11-10",
+      caption = "<span style='color:white;'>**@magnachart (data source: OWID|JHU)**</span>",
+      fill = "name1") +
+  theme_kimberlite() +
+  theme(axis.title = element_blank(),
+        plot.subtitle = element_textbox_simple(
+        lineheight = 1,
+        padding = margin(5.5, 5.5, 5.5, 5.5),
+        margin = margin(0, 0, 5.5, 0),
+        fill = "lightgrey"
+        ),
+        plot.caption = element_textbox(
+        size = 12,
+        lineheight = 1,
+        padding = margin(5.5, 5.5, 5.5, 5.5),
+        margin = margin(0, 0, 5.5, 0),
+        fill = "#005577"
+        )
+  )
+p2
+ggsave("_tmp/v4v.svg", p2, width = 15, height = 11, dpi = 320)
+ggsave("_tmp/v4v.png", p2, width = 15, height = 11, dpi = 320)
+
+
+jhu %>%
+  select(date, Czechia, Hungary, Poland, Slovakia) %>%
+  filter(date >= "2020-11-10") %>%
+  ggplot(aes(x=date)) +
+#  geom_area(aes(y = Czechia), fill = "#972d15", alpha = 0.8) +
+  geom_area(aes(y = Poland), fill = "#f47735", alpha = 0.8) +
+#  geom_area(aes(y = Slovakia), fill = "#005577", alpha = 0.8) +
+  geom_col(aes(y = Hungary), fill = "#02441d", alpha =0.8, show.legend = TRUE) +
+  scale_x_date(breaks = as.Date(c("2020-11-10", "2020-12-10", "2021-01-10", "2021-02-10", "2021-03-05"))) +
+  labs(title = "Cummulative weekly new COVID-19 cases per million",
+      subtitle = "<span style='color:#02441d'>**Hungary**</span> compared to <span style='color:#972d15;'>**CZ**</span>, <span style='color:#f47735';>**PL**</span> and <span style='color:#005577;'>**SK**</span> since 2020-11-10",
+      caption = "<span style='color:white;'>**@magnachart (data source: OWID|JHU)**</span>",
+      fill = "name1") +
+  theme_kimberlite() +
+  theme(axis.title = element_blank(),
+        plot.subtitle = element_textbox_simple(
+        lineheight = 1,
+        padding = margin(5.5, 5.5, 5.5, 5.5),
+        margin = margin(0, 0, 5.5, 0),
+        fill = "lightgrey"
+        ),
+        plot.caption = element_textbox(
+        size = 12,
+        lineheight = 1,
+        padding = margin(5.5, 5.5, 5.5, 5.5),
+        margin = margin(0, 0, 5.5, 0),
+        fill = "#005577"
+        )
+  )
+
+
+
+
+
+str(p)
+rlang::last_error()
+rlang::last_trace()
+
+ggsave("_tmp/v4v.svg", p, width = 15, height = 11, dpi = 320)
+ggsave("_tmp/v4v.png", p, width = 15, height = 11, dpi = 320)
+
 
 tail(jhu)
 library(gridtext)

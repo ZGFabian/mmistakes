@@ -1,0 +1,46 @@
+---
+layout: single
+lang: en
+categories: data
+tags: dplyr
+classes: wide
+---
+
+```{r setup}
+
+```
+
+### Video tutorials on dplyr
+
+[Michael Chow | Bringing the Tidyverse to Python with Siuba](https://www.youtube.com/watch?v=w4Mi0u4urbQ)
+[Hadley Wickham's "dplyr" tutorial at useR 2014 (1/2)](https://www.youtube.com/watch?v=w4Mi0u4urbQ)
+
+
+Notes:
+- Headley 2014 Talk figure on think -> code -> do process (There is a cognitive aspect of the first stage. That journey is easened by dplyr's grammar)
+- Five key verbs of dplyr: (1) filter (2) select (3) mutate (4) summarise (5) arrange + group_by
+- pipe %>% f(x,y) = x %>% y
+- There are other verbs as well:
+    - Rows:
+filter() chooses rows based on column values.
+slice() chooses rows based on location.
+arrange() changes the order of the rows.
+    - Columns:
+select() changes whether or not a column is included.
+rename() changes the name of columns.
+mutate() changes the values of columns and creates new columns.
+relocate() changes the order of the columns.
+    - Groups of rows:
+summarise() collapses a group into a single row.
+
+
+```{r}
+library(tidyverse)
+?dplyr()
+options(browser = "qutebrowser")
+browseVignettes(package = "dplyr")
+```
+
+
+
+
