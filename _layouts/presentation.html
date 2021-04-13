@@ -18,9 +18,10 @@
     {% include head/custom.html %}
   </head>
   <body>
-    <textarea id="source">
-{{ page.content }}
-    </textarea>
+      <textarea id="source">
+          {{ page.content }}
+      </textarea>
+    {% include footer/custom.html %}
     <script type="text/javascript">
       var slideshow = remark.create({navigation: {scroll: false,}});
     </script>
