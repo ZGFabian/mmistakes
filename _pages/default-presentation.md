@@ -20,4 +20,4 @@ permalink: /default-presentation/
 
 # My own configuration
 
-Hello world!
+1. Downloaded [remark-latest.min.js](https://gnab.github.io/remark/downloads/remark-latest.min.js) to `assets/js` folder.
