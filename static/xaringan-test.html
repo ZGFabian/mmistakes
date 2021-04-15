@@ -1,36 +1,118 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Presentation Ninja</title>
+    <title>Xaringan in a Jekyll site</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Yihui Xie" />
+    <meta name="author" content="zgfabian" />
+    <meta name="date" content="2021-04-15" />
     <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Presentation Ninja
-## with xaringan
-### Yihui Xie
-### 2016/12/12
+# Xaringan in a Jekyll site
+## with (uhmm…) xaringan (metropolis theme)
+### zgfabian
+### 2021-04-15
 
 ---
 
 
-One slide.
+# Basics
+
+## What is Jekyll?
+
+&gt; [Jekyll](http://jekyllrb.com) is a static website generator. I use it for my personal website at [zgfabian.github.com](http://zgfabian.github.com). 
+
+--
+
+## What is Xaringan?
+
+&gt; The `xaringan` R package is an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com) to generate HTML5 presentations of a different style. It's been developed by [Yihui Xie](https://yihui.org/en/).
+
+&lt;img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" height="50"&gt;
 
 ---
 
-Another slide.
+# First steps
 
 
 
+```r
+install.packages("xaringan")
+#xaringan:::list_css()
+```
+
+xaringan presentations are [Rmarkdown]() files. I configured Jekyll to exclude them from rendering. Cf. Jekyll's `_config.yml`:
+
+```yml
+exclude:
+  - "*.Rmd"
+  ...
+```
+
+Usually, I keep my Rmd files under `_drafts` folder, so it is not served by Jekyll. I am also keeping out this folder from github deployment by adding to `.gitignore` file.
+
+???
+
+Wow, this even does presenter notes. 
+
+```yml
+xxx: jshdfj
+```
+
+# Árvíztűrő tükörfúrógép
+
+*Italic text* **bold text** _underlined text_ [^1]
+
+[^1]: Footnote text goes here.
+
+{: .notice--info}
+**material deprivation rate** is the percentage of the population that cannot afford at least three of the following nine items: (1) to pay their rent, mortgage or utility bills; (2) to keep their home adequately warm; (3) to face unexpected expenses; (4) to eat meat or proteins regularly; (5) to go on holiday; (6) a television set; (7) a washing machine; (8) a car; (9) a telephone. **Severe material deprivation rate** is defined as the enforced inability to pay for at least four of the above-mentioned items. _Source:_ [EUROSTAT glossary](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_material_deprivation_rate)
+
+---
+
+Another slide. 
+
+- list item 1
+- list item 2
+
+&gt; @sammo3182 Sorry, but I don't have time to teach you how to use Github Pages. The xaringan output is an .html file associated with a libs directory(or *_files). Upload these two things to any host.
+
+TODO: more styling
+
+
+
+---
+
+Third slide
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+* Bulleted list item 1
+* Bulleted list item 1
+
+---
+class: mainslide, left, top
+
+# Notes
+
+https://remarkjs.com/
+
+https://bookdown.org/yihui/rmarkdown/xaringan.html
+
+https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../assets/js/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "countIncrementalSlides": false

@@ -1,0 +1,104 @@
+---
+title: "Xaringan in a Jekyll site"
+subtitle: "with (uhmm...) xaringan (metropolis theme)"
+author: "zgfabian"
+date: "2021-04-15"
+categories: [web, R]
+tags: [Jekyll, xaringan, Rstat]
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
+    lib_dir: ../static/libs
+    chakra: ../assets/js/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+---
+
+# Basics
+
+## What is Jekyll?
+
+> [Jekyll](http://jekyllrb.com) is a static website generator. I use it for my personal website at [zgfabian.github.com](http://zgfabian.github.com). 
+
+--
+
+## What is Xaringan?
+
+> The `xaringan` R package is an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com) to generate HTML5 presentations of a different style. It's been developed by [Yihui Xie](https://yihui.org/en/).
+
+<img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" height="50">
+
+---
+
+# First steps
+
+
+```{r, eval = FALSE}
+install.packages("xaringan")
+#xaringan:::list_css()
+```
+
+xaringan presentations are [Rmarkdown]() files. I configured Jekyll to exclude them from rendering. Cf. Jekyll's `_config.yml`:
+
+```yml
+exclude:
+  - "*.Rmd"
+  ...
+```
+
+Usually, I keep my Rmd files under `_drafts` folder, so it is not served by Jekyll. I am also keeping out this folder from github deployment by adding to `.gitignore` file.
+
+???
+
+Wow, this even does presenter notes. 
+
+```yml
+xxx: jshdfj
+```
+
+# Árvíztűrő tükörfúrógép
+
+*Italic text* **bold text** _underlined text_ [^1]
+
+[^1]: Footnote text goes here.
+
+{: .notice--info}
+**material deprivation rate** is the percentage of the population that cannot afford at least three of the following nine items: (1) to pay their rent, mortgage or utility bills; (2) to keep their home adequately warm; (3) to face unexpected expenses; (4) to eat meat or proteins regularly; (5) to go on holiday; (6) a television set; (7) a washing machine; (8) a car; (9) a telephone. **Severe material deprivation rate** is defined as the enforced inability to pay for at least four of the above-mentioned items. _Source:_ [EUROSTAT glossary](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_material_deprivation_rate)
+
+---
+
+Another slide. 
+
+- list item 1
+- list item 2
+
+> @sammo3182 Sorry, but I don't have time to teach you how to use Github Pages. The xaringan output is an .html file associated with a libs directory(or *_files). Upload these two things to any host.
+
+TODO: more styling
+
+
+
+---
+
+Third slide
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+* Bulleted list item 1
+* Bulleted list item 1
+
+---
+class: mainslide, left, top
+
+# Notes
+
+https://remarkjs.com/
+
+https://bookdown.org/yihui/rmarkdown/xaringan.html
+
+https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
