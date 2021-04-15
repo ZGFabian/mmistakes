@@ -1,5 +1,10 @@
 <!-- start custom footer snippets -->
-<script type="text/javascript" src="{{ site.baseurl  }}/assets/js/remark-latest.min.js"></script>
+{% if page.layout == "presentation" %}
+    <script type="text/javascript" src="{{ site.baseurl  }}/assets/js/remark-latest.min.js"></script>
+    <script type="text/javascript">
+     var slideshow = remark.create({navigation: {scroll: false,}});
+    </script>
+{% endif %}
 <script type="text/javascript" src="{{ site.baseurl  }}/assets/js/lightbox.js"></script>
 <link rel="stylesheet" href="{{ site.baseurl  }}/assets/css/lightbox.css">
 </body>

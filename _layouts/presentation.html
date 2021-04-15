@@ -1,29 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title | strip_html }}</title>
-    <style>
-     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-     body { font-family: 'Droid Serif'; }
-     h1, h2, h3 {
-         font-family: 'Yanone Kaffeesatz';
-         font-weight: normal;
-     }
-     .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-    </style>
-    {% include head/custom.html %}
-  </head>
-  <body>
-      <textarea id="source">
-          {{ page.content }}
-      </textarea>
-    {% include footer/custom.html %}
-    <script type="text/javascript">
-      var slideshow = remark.create({navigation: {scroll: false,}});
-    </script>
-  </body>
+---
+---
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+    <head>
+      <meta charset="utf-8">
+      <title>{{ page.title | strip_html }}</title>
+      {% include head/custom.html %}
+    </head>
+    <body>
+        <textarea id="source">
+            {{ page.content }}
+        </textarea>
+        {% include footer/custom.html %}
+    </body>
 </html>

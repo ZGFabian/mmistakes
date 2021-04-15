@@ -1,10 +1,20 @@
 ---
 layout: presentation
-title: Default Presentation
+title: HTML presentation with remark.js demo
 permalink: /default-presentation/
+categories: [jekyll, remark.js]
+tags: [presentation, html, markdown]
+remark-css: default 
 ---
 
+.center
 # HTML presentation with remark.js
+
+.center[.red.bold[*] Important footnote]
+
+??? 
+
+Notes jkdsajljdsalj
 
 ---
 
@@ -20,4 +30,19 @@ permalink: /default-presentation/
 
 # My own configuration
 
-1. Downloaded [remark-latest.min.js](https://gnab.github.io/remark/downloads/remark-latest.min.js) to `assets/js` folder.
+1. Downloaded [remark-latest.min.js](https://gnab.github.io/remark/downloads/remark-latest.min.js) to `assets/js`* folder.
+2. Added a line to `_includes/footer/custom.html`
+3. 
+
+```html
+<!-- start custom footer snippets -->
+{% if page.layout == "presentation" %}
+<script type="text/javascript" src="{{ site.baseurl  }}/assets/js/remark-latest.min.js"></script>
+{% endif %}
+[...]
+</body>
+</html>
+<!-- end custom footer snippets -->
+```
+
+`* You should have to give `{{ site.baseurl }}` in your `_config.yml`, if you deploy to a github.com project page.
