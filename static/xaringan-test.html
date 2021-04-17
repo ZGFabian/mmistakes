@@ -7,8 +7,8 @@
     <meta name="date" content="2021-04-17" />
     <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers-fonts.css" rel="stylesheet" />
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/site/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/site/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/site/favicon-16x16.png">
@@ -20,16 +20,22 @@
   </head>
   <body>
     <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Xaringan in a Jekyll site
+## with (uhmm…) xaringan (metropolis theme)
+### zgfabian
+### 2021-04-17
+
+---
 
 class: center, middle, inverse
 
 # Xaringan in a Jekyll site
 
-.center[## Made with Xaringan Rstat library]
+## .center[Made with Xaringan Rstat library]
 
-.center[Zoltán Fábián]
-
-
+.left[Zoltán Fábián]
 .right[2021-04-17]
 
 ---
@@ -38,13 +44,13 @@ class: center, middle, inverse
 
 ## What is Jekyll?
 
-&gt; [Jekyll](http://jekyllrb.com) is a static website generator. I use it for my personal website at [zgfabian.github.com](http://zgfabian.github.com). 
-&lt;img src="../assets/img/etc/jekyll-logo.jpg" alt="xaringan-logo" style="float:right;height:100px;"&gt;
+[Jekyll](http://jekyllrb.com) is a static website generator. I use it for my personal website at [zgfabian.github.com](http://zgfabian.github.io). 
+&lt;img src="../assets/img/etc/jekyll-logo.jpg" alt="xaringan-logo" style="float:right;height:100px;"&gt;&lt;/br&gt;
 --
 
 ## What is Xaringan?
 &lt;img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" style="float:right;height:100px;"&gt;
-&gt; The `xaringan` R package is an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com) to generate HTML5 presentations of a different style. It's been developed by [Yihui Xie](https://yihui.org/en/).
+The `xaringan` R package is an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com) to generate HTML5 presentations of a different style. It's been developed by [Yihui Xie](https://yihui.org/en/).
 
 ---
 
@@ -52,22 +58,26 @@ class: center, middle, inverse
 
 
 ```r
+# install
 install.packages("xaringan")
-#xaringan:::list_css()
+# list available theme (+font) names
+names(xaringan:::list_css())
 ```
 
-## Some feature of Xaringan
+## Some features of Xaringan
 
+- Based on Rmarkdown and require some html, css and optimally js knowledge
+- Built-in css themes and theme customisation made easy with `xaringanthemer` package
+- online and offline presentations
+- pdf output (TODO:)
 - slide separator: `---`
 - incremental reveal separator: `--`
 - presenter notes separator: `???`
 
 --
-- press `?` to see features &lt;a href="#a"&gt;a&lt;/a&gt; 
-  - presenter mode and cloning: show the notes on your screen and the clone on the projector
-  - timer
-
-&lt;a id = "a"&gt;a&lt;/a&gt;(*You can try it* **now**)
+- press `?` to see features
+  - (`p`) presenter mode and cloning: show the (`???`) notes and timer on your screen and the clone on the projector
+  - `f` fullscreen
 
 ???
 
@@ -79,9 +89,9 @@ Here's a list of stuff to say:
 
 # Configuration in Jekyll
 
-xaringan presentations are [Rmarkdown]() files. I configured Jekyll to exclude them from rendering. Cf. Jekyll's `_config.yml`:
+Xaringan presentations are [Rmarkdown]() files. I configured Jekyll to exclude them from rendering. Cf. Jekyll's `_config.yml`:
 
-```yml
+```
 exclude:
   - "*.Rmd"
   ...
@@ -95,40 +105,39 @@ Wow, this even does presenter notes.
 
 ---
 
-Another slide. 
+# File locations
 
-- list item 1
-- list item 2
+- `remark.js` is served from a project folder. (In my case on [`minimal-mistake` Jekyll theme](https://github.com/mmistakes/minimal-mistakes) it is `./assets/js/` folder)
 
-&gt; @sammo3182 Sorry, but I don't have time to teach you how to use Github Pages. The xaringan output is an .html file associated with a libs directory(or *_files). Upload these two things to any host.
+```
+output:
+  xaringan::moon_reader:
+    chakra: ../assets/js/remark-latest.min.js
+```
+Note: Mind your `remark.js` version. Xariangan provides a dedicated function, (`summon_remark`) to download the proper version of the `remark.js` script to your local disk, so you can render slides offline. You need to change the `chakra` argument of `moon_reader()` accordingly. 
 
-TODO: more styling
-
-
-
----
-
-Third slide
-
-## Header 2
-
-### Header 3
-
-#### Header 4
-
-* Bulleted list item 1
-* Bulleted list item 1
+- header customization for proper favicon display
+ - Xaringan Rmd yaml front matter
+ 
+```
+output:
+  xaringan::moon_reader:
+    ...
+    includes:
+      in_header: ../_includes/head/favicon-xaringan.html
+ ```
 
 ---
-class: mainslide, left, top
 
-# Notes
+# Further resources
 
-https://remarkjs.com/
+- for creating custom xaringan themes - [xaringanthemer](https://cran.r-project.org/web/packages/xaringanthemer/vignettes/xaringanthemer.html) package
 
-https://bookdown.org/yihui/rmarkdown/xaringan.html
+- [remarkjs.com - website](https://remarkjs.com/)
 
-https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+- xaringan in the Rmarkdown book - https://bookdown.org/yihui/rmarkdown/xaringan.html
+
+- https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="../assets/js/remark-latest.min.js"></script>
