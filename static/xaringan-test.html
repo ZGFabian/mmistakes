@@ -4,48 +4,80 @@
     <title>Xaringan in a Jekyll site</title>
     <meta charset="utf-8" />
     <meta name="author" content="zgfabian" />
-    <meta name="date" content="2021-04-15" />
+    <meta name="date" content="2021-04-17" />
     <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/site/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/site/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/site/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/site/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- favicons ends -->
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+class: center, middle, inverse
 
 # Xaringan in a Jekyll site
-## with (uhmm…) xaringan (metropolis theme)
-### zgfabian
-### 2021-04-15
+
+.center[## Made with Xaringan Rstat library]
+
+.center[Zoltán Fábián]
+
+
+.right[2021-04-17]
 
 ---
-
 
 # Basics
 
 ## What is Jekyll?
 
 &gt; [Jekyll](http://jekyllrb.com) is a static website generator. I use it for my personal website at [zgfabian.github.com](http://zgfabian.github.com). 
-
+&lt;img src="../assets/img/etc/jekyll-logo.jpg" alt="xaringan-logo" style="float:right;height:100px;"&gt;
 --
 
 ## What is Xaringan?
-
+&lt;img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" style="float:right;height:100px;"&gt;
 &gt; The `xaringan` R package is an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com) to generate HTML5 presentations of a different style. It's been developed by [Yihui Xie](https://yihui.org/en/).
-
-&lt;img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" height="50"&gt;
 
 ---
 
-# First steps
-
+# Xaringan overview
 
 
 ```r
 install.packages("xaringan")
 #xaringan:::list_css()
 ```
+
+## Some feature of Xaringan
+
+- slide separator: `---`
+- incremental reveal separator: `--`
+- presenter notes separator: `???`
+
+--
+- press `?` to see features &lt;a href="#a"&gt;a&lt;/a&gt; 
+  - presenter mode and cloning: show the notes on your screen and the clone on the projector
+  - timer
+
+&lt;a id = "a"&gt;a&lt;/a&gt;(*You can try it* **now**)
+
+???
+
+Here's a list of stuff to say:
+
+- some notes to myself
+- more stuff
+
+
+# Configuration in Jekyll
 
 xaringan presentations are [Rmarkdown]() files. I configured Jekyll to exclude them from rendering. Cf. Jekyll's `_config.yml`:
 
@@ -60,19 +92,6 @@ Usually, I keep my Rmd files under `_drafts` folder, so it is not served by Jeky
 ???
 
 Wow, this even does presenter notes. 
-
-```yml
-xxx: jshdfj
-```
-
-# Árvíztűrő tükörfúrógép
-
-*Italic text* **bold text** _underlined text_ [^1]
-
-[^1]: Footnote text goes here.
-
-{: .notice--info}
-**material deprivation rate** is the percentage of the population that cannot afford at least three of the following nine items: (1) to pay their rent, mortgage or utility bills; (2) to keep their home adequately warm; (3) to face unexpected expenses; (4) to eat meat or proteins regularly; (5) to go on holiday; (6) a television set; (7) a washing machine; (8) a car; (9) a telephone. **Severe material deprivation rate** is defined as the enforced inability to pay for at least four of the above-mentioned items. _Source:_ [EUROSTAT glossary](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_material_deprivation_rate)
 
 ---
 

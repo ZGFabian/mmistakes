@@ -2,17 +2,32 @@
 title: "Xaringan in a Jekyll site"
 subtitle: "with (uhmm...) xaringan (metropolis theme)"
 author: "zgfabian"
-date: "2021-04-15"
+date: "`r format(Sys.Date())`"
 categories: [web, R]
 tags: [Jekyll, xaringan, Rstat]
 output:
   xaringan::moon_reader:
+    seal: false
     css: [default, metropolis, metropolis-fonts]
     lib_dir: ../static/libs
     chakra: ../assets/js/remark-latest.min.js
+    includes:
+      in_header: ../_includes/head/favicon-xaringan.html
     nature:
       highlightStyle: github
       countIncrementalSlides: false
+---
+class: center, middle, inverse
+
+# Xaringan in a Jekyll site
+
+.center[## Made with Xaringan Rstat library]
+
+.center[Zoltán Fábián]
+
+
+.right[`r format(Sys.Date())`]
+
 ---
 
 # Basics
@@ -20,24 +35,44 @@ output:
 ## What is Jekyll?
 
 > [Jekyll](http://jekyllrb.com) is a static website generator. I use it for my personal website at [zgfabian.github.com](http://zgfabian.github.com). 
-
+<img src="../assets/img/etc/jekyll-logo.jpg" alt="xaringan-logo" style="float:right;height:100px;">
 --
 
 ## What is Xaringan?
-
+<img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" style="float:right;height:100px;">
 > The `xaringan` R package is an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com) to generate HTML5 presentations of a different style. It's been developed by [Yihui Xie](https://yihui.org/en/).
-
-<img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" height="50">
 
 ---
 
-# First steps
-
+# Xaringan overview
 
 ```{r, eval = FALSE}
 install.packages("xaringan")
 #xaringan:::list_css()
 ```
+
+## Some feature of Xaringan
+
+- slide separator: `---`
+- incremental reveal separator: `--`
+- presenter notes separator: `???`
+
+--
+- press `?` to see features <a href="#a">a</a> 
+  - presenter mode and cloning: show the notes on your screen and the clone on the projector
+  - timer
+
+<a id = "a">a</a>(*You can try it* **now**)
+
+???
+
+Here's a list of stuff to say:
+
+- some notes to myself
+- more stuff
+
+
+# Configuration in Jekyll
 
 xaringan presentations are [Rmarkdown]() files. I configured Jekyll to exclude them from rendering. Cf. Jekyll's `_config.yml`:
 
@@ -53,25 +88,14 @@ Usually, I keep my Rmd files under `_drafts` folder, so it is not served by Jeky
 
 Wow, this even does presenter notes. 
 
-```yml
-xxx: jshdfj
-```
-
-# Árvíztűrő tükörfúrógép
-
-*Italic text* **bold text** _underlined text_ [^1]
-
-[^1]: Footnote text goes here.
-
-{: .notice--info}
-**material deprivation rate** is the percentage of the population that cannot afford at least three of the following nine items: (1) to pay their rent, mortgage or utility bills; (2) to keep their home adequately warm; (3) to face unexpected expenses; (4) to eat meat or proteins regularly; (5) to go on holiday; (6) a television set; (7) a washing machine; (8) a car; (9) a telephone. **Severe material deprivation rate** is defined as the enforced inability to pay for at least four of the above-mentioned items. _Source:_ [EUROSTAT glossary](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_material_deprivation_rate)
-
 ---
 
-Another slide. 
+## File locations
 
-- list item 1
-- list item 2
+- remark.js is served from prject folder
+- header customization for proper favicon display
+
+
 
 > @sammo3182 Sorry, but I don't have time to teach you how to use Github Pages. The xaringan output is an .html file associated with a libs directory(or *_files). Upload these two things to any host.
 
