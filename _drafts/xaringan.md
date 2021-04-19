@@ -2,7 +2,7 @@
 title: "Xaringan in a Jekyll site"
 subtitle: "with (uhmm...) xaringan (metropolis theme)"
 author: "zgfabian"
-date: "`r format(Sys.Date())`"
+date: "2021-04-18"
 categories: [web, R]
 tags: [Jekyll, xaringan, Rstat]
 output:
@@ -17,19 +17,28 @@ output:
       highlightStyle: github
       countIncrementalSlides: false
 ---
+class: middle
 
+
+>The name “xaringan” came from [Sharingan](http://naruto.wikia.com/wiki/Sharingan) in the Japanese manga and anime “Naruto.” The word was deliberately chosen to be difficult to pronounce for most people (unless you have watched the anime), because its author (me) loved the style very much, and was concerned that it would become too popular. The concern was somewhat naive, because the style is actually very customizable, and users started to contribute more themes to the package later. - [Yihui Xie](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+
+
+
+
+
+---
 class: center, middle, inverse
 
 .left-column[![](../assets/img/etc/naruto-xaringan.jpg)]
 .right-column[
 # Xaringan in a Jekyll site
 
-## .center[Made with Xaringan Rstat package]
+## .center[Made with Xaringan Rstat library]
 <br><br><br><br><br>
 
 
 .right[Zoltán Fábián]
-.right[`r format(Sys.Date())`]
+.right[2021-04-18]
 ]
 ---
 class: inverse
@@ -46,22 +55,13 @@ class: inverse
 <img src="../assets/img/etc/xaringan-logo.png" alt="xaringan-logo" style="float:right;height:100px;">
 The `xaringan` R package is an R Markdown extension based on the JavaScript library [remark.js](https://remarkjs.com) to generate HTML5 presentations of a different style. It's been developed by [Yihui Xie](https://yihui.org/en/).
 
-
+.footnote["In the anime and manga series Naruto, the Sharingan is an ability that allows a ninja to copy, by mere sight, their opponents' techniques while gaining incredible reflexes and perceptive abilities."]
 ---
-class: middle, inverse
 
-
->*The name “xaringan” came from [Sharingan](http://naruto.wikia.com/wiki/Sharingan) in the Japanese manga and anime “Naruto.” The word was deliberately chosen to be difficult to pronounce for most people (unless you have watched the anime), because its author (me) loved the style very much, and was concerned that it would become too popular. The concern was somewhat naive, because the style is actually very customizable, and users started to contribute more themes to the package later.* - [Yihui Xie](https://bookdown.org/yihui/rmarkdown/xaringan.html), the author of Xaringan (and many more) R package
-<br><br><br>
-
-
->*"The Sharingan is an ability that allows a ninja to copy, by mere sight, their opponents' techniques while gaining incredible reflexes and perceptive abilities."* - [Urban Dictionary](https://www.urbandictionary.com/define.php?term=The%20Sharingan)
-
-
----
 # Xaringan overview
 
-```{r, eval = FALSE}
+
+```r
 # install
 install.packages("xaringan")
 # list available theme (+font) names
