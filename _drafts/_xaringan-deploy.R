@@ -1,8 +1,10 @@
 options(browser = "surf")
+getwd()
 rmarkdown::render(input = 'xaringan.Rmd',
                   output_format = 'xaringan::moon_reader',
-                  output_file = "xaringan-test.html",
-                  output_dir = "../static/")
+                  output_file = "xaringan-prez.html",
+                  output_dir = "../static/xaringan-prez/",
+                  clean = FALSE)
 
 # install.packages("pagedown")
 
@@ -10,4 +12,3 @@ rmarkdown::render(input = 'xaringan.Rmd',
 # chrome print_requires chrome or derivates like brave
 
 Sys.setenv(PAGEDOWN_CHROME = "/usr/bin/brave")
-pagedown::chrome_print("https://zgfabian.github.io/mmistakes/static/xaringan-test.html")
