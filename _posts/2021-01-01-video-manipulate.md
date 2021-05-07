@@ -2,7 +2,7 @@
 layout: single
 title: Video manipulating from the command line
 subtitle: Linux examples
-categories: [Linux, CLI]
+categories: [linux]
 tags: [CLI, subtitles, ffmpeg, ytdl, youtube-dl, slideshow]
 toc: true
 lang: en
@@ -117,3 +117,8 @@ If you are willing to face difficulties than you will need to install `cargo`. U
  - [you-get](https://github.com/soimort/you-get) - a python based command-line utility to download media contents (videos, audios, images) from the Web.
  - [ytdl-npm](https://www.npmjs.com/package/ytdl) - is a youtube downloader written in Javascript. Browse source at [Github](https://github.com/fent/node-ytdl).
 Naming is somewhat confusing. This is different from aforementioned [python's pafy library](https://pypi.org/project/pafy/), that also provides a command line tool (ytdl) for downloading Youtube content.
+
+## GUI video recording apps
+
+- OBS
+- simplescreenrecorder (lightweight qt app)

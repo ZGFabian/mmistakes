@@ -3,8 +3,9 @@ title: Mapping Eurostat data
 subtitle: using R's eurostat, sf and ggplot2 packages
 layout: single
 classes: wide
-categories: data
-tags: [ggplot, sf, eurostat, mapping]
+categories: [data visualization, rstats, social statistics]
+tags: [ggplot, sf, eurostat, employment rate]
+plots: map
 lang: en
 ---
 

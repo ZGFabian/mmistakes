@@ -1,18 +1,14 @@
 ---
 title: "Severe material deprivation rate (SMDR) in V4 countries, 2005-2019"
-output:
-  md_document:
-    variant: gfm 
-    preserve_yaml: TRUE
-# excerpt: "I plotted EUROSTAT data with a few line of R codes using `eurostat` and `tidyverse`."
 layout: single
 categories:
-  - data
-tags: [ggplot, eurostat, R, V4 countries]
+  - social statistics
+  - rstats
+  - data visualization
+plots: [bar chart]
+tags: [ggplot, eurostat, V4 countries, material deprivation rate]
 image: # brent-rambo.jpg # for open graph protocol
 ---
-{: .small}
-*Last modified on Sun Apr 18 09:07:02 2021*
 
 With the exception of Hungary severe material deprivation rate (SMDR) declined unanimously in V4 countries after the EU accession. Hungary  was hit harder by the social outcomes of 2008 financial crisis than Czechia, Poland or Slovakia. SMDR grew from 17 percent in 2008 to 26 percent point in 2013. However, the austerity measures of social-liberal government and unorthodox economic policy of the second Orbán cabinet resulted in a decline of SMDR after 2013 in Hungary. However, Poland was a real "fairy tale"[^1] among V4s in reducing SMDR to one tenth of its 2005 value. 
 

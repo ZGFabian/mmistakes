@@ -3,8 +3,8 @@ title: Anatomy of an ancient magick command
 subtitle: Display a color palette with ImageMagick
 layout: single
 classes: wide
-categories: Linux
-tags: [ImageMagick, color palette]
+categories: linux
+tags: [ImageMagick, color palette, convert, mogrify]
 image: assets/img/21-02-05-imagemagick/rgb-pal.png
 ---
 
@@ -25,7 +25,7 @@ convert -size 100x100 \
 
 Some more details on command syntax:
 
-- convert vs. magick 
+- `convert` vs. `mogrify`: "It’s worth pointing out that Imagemagick has two main commands for modifying images. The main difference is that `convert` tends to be for working on individual images, whereas `mogrify` is for batch processing multiple files. Another key distinction is that convert is designed to modify an image and output to a separate file. Mogrify on the other hand will quite happily change the original file, unless you specify a separate output location. Be careful not to modify images without a backup!" Source: [deparkes](https://deparkes.co.uk/2015/03/16/useful-imagemagick-commands/)
 
 - A backslash ("\\" character) permits the command to span over multiple lines. It is a so called "escape" character that invokes an alternative interpretation on the following characters in a character sequence.
 

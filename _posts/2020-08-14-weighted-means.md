@@ -1,8 +1,9 @@
 ---
-title: Weighted survey means
+title: Weighted survey means with rstats
 subtitle: European Social Survey plotting exercise
-categories: data
-tags: [srvyr, ggplot, weighted mean]
+categories: [rstats, data visualization, social statistics]
+tags: [srvyr, ggplot, weighted mean, European Social Survey, trust]
+plots: [bar chart]
 lang: en
 ---
 The following simple example will use European Social Survey (ESS) integrated datafile in order to plot unweighted and weighted distribution of the generalized trust variable (`ppltrst`).

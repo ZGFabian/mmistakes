@@ -2,8 +2,9 @@
 layout: single 
 title: Over or below the grey lines
 subtitle: Mortality in Hungary and in the USA during the pandemic
-categories: data
+categories: [data visualization, rstats]
 tags: [ggplot, COVID-19, mortality, Hungary, USA, EUROMOMO]
+plots: [linechart, trendline, bar chart]
 lang: en
 # image: hu-mortality-w36-small.png
 # featured-image-alt: Number of death in HU 
@@ -42,7 +43,8 @@ With different methodologies similar comparisons are available for European coun
 
 Sources:
 
-- [R-script]({{ site.baseurl }}/assets/img/20-10-07-mortality/weekly-mortality.R) 
+- [R-script figures]({{ site.baseurl }}/assets/img/20-10-07-mortality/weekly-mortality.R) 
+- [Figure 3 script]({{ site.baseurl }}/assets/img/20-10-07-mortality/owid-20-10-12.R) 
 
 Data:
 
