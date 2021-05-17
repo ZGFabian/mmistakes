@@ -2,72 +2,51 @@
 layout: single
 classes: wide
 categories: [python, social statistics]
+title: "Getting started with Python pandas"
 tags: [python, pandas]
 layout: single
 classes: wide
 categories: [python, social statistics]
 tags: [python, pandas]
 ---
-# Getting started with Python pandas
 
-## What is pandas?
+## What to do with Python's pandas library?
 
 [Pandas](https://pandas.pydata.org/) is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
 
 ### Ask Python itself what is pandas!
 
-
 ```python
 import pandas
 pandas?
 ```
+Here is some of the output:
 
+> **pandas** is a Python package providing fast, flexible, and expressive data
+structures designed to make working with "relational" or "labeled" data both
+easy and intuitive. It aims to be the fundamental high-level building block for
+doing practical, **real world** data analysis in Python. Additionally, it has
+the broader goal of becoming **the most powerful and flexible open source data
+analysis / manipulation tool available in any language**. It is already well on
+its way toward this goal.
 
-    [0;31mType:[0m        module
-    [0;31mString form:[0m <module 'pandas' from '/home/fabian/.local/lib/python3.9/site-packages/pandas/__init__.py'>
-    [0;31mFile:[0m        ~/.local/lib/python3.9/site-packages/pandas/__init__.py
-    [0;31mDocstring:[0m  
-    pandas - a powerful data analysis and manipulation library for Python
-    =====================================================================
-    
-    **pandas** is a Python package providing fast, flexible, and expressive data
-    structures designed to make working with "relational" or "labeled" data both
-    easy and intuitive. It aims to be the fundamental high-level building block for
-    doing practical, **real world** data analysis in Python. Additionally, it has
-    the broader goal of becoming **the most powerful and flexible open source data
-    analysis / manipulation tool available in any language**. It is already well on
-    its way toward this goal.
-    
-    Main Features
-    -------------
-    Here are just a few of the things that pandas does well:
-    
-      - Easy handling of missing data in floating point as well as non-floating
-        point data.
-      - Size mutability: columns can be inserted and deleted from DataFrame and
-        higher dimensional objects
-      - Automatic and explicit data alignment: objects can be explicitly aligned
-        to a set of labels, or the user can simply ignore the labels and let
-        `Series`, `DataFrame`, etc. automatically align the data for you in
-        computations.
-      - Powerful, flexible group by functionality to perform split-apply-combine
-        operations on data sets, for both aggregating and transforming data.
-      - Make it easy to convert ragged, differently-indexed data in other Python
-        and NumPy data structures into DataFrame objects.
-      - Intelligent label-based slicing, fancy indexing, and subsetting of large
-        data sets.
-      - Intuitive merging and joining data sets.
-      - Flexible reshaping and pivoting of data sets.
-      - Hierarchical labeling of axes (possible to have multiple labels per tick).
-      - Robust IO tools for loading data from flat files (CSV and delimited),
-        Excel files, databases, and saving/loading data from the ultrafast HDF5
-        format.
-      - Time series-specific functionality: date range generation and frequency
-        conversion, moving window statistics, date shifting and lagging.
+Main Features
+-------------
+&ldquo;Here are just a few of the things that pandas does well:
 
+- Easy handling of missing data in floating point as well as non-floating
+  point data.
+- Size mutability: columns can be inserted and deleted from DataFrame and
+  higher dimensional objects
+- Automatic and explicit data alignment: objects can be explicitly aligned
+  to a set of labels, or the user can simply ignore the labels and let
+  `Series`, `DataFrame`, etc. automatically align the data for you in
+  computations.
+- Powerful, flexible group by functionality to perform split-apply-combine
+  operations on data sets, for both aggregating and transforming data.&rdquo;
+  (...)
 
-
-Want to know more? Run `pandas??`!. To save some typing pandas can be imported as pd like `import pandas as pd`. So `pd??` will do it as well.
+Want to know more? Run `pandas??`! To save some typing pandas can be imported as pd like `import pandas as pd`. So `pd??` will do it as well.
 
 ## Go on with some real world example...
 
@@ -83,25 +62,13 @@ df = px.data.gapminder()  # n.b. there is a separate module for gapminder data
 type(df)
 ```
 
-
-
-
     pandas.core.frame.DataFrame
 
-
-
-
-```python
 Have a look at some attributes and descriptive statistics of our DataFrame. 
-```
-
 
 ```python
 df.head(5)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -191,20 +158,11 @@ df.head(5)
 </table>
 </div>
 
-
-
-
 ```python
 df.shape  #without parents!
 ```
 
-
-
-
     (1704, 8)
-
-
-
 
 ```python
 pd.set_option('display.float_format', lambda x: '%.1f' % x)  # set number of digits
@@ -332,52 +290,21 @@ df["country"].value_counts()
     Name: country, Length: 142, dtype: int64
 
 
-
-
-```python
-df["country"]
-```
-
-
-
-
-    0       Afghanistan
-    1       Afghanistan
-    2       Afghanistan
-    3       Afghanistan
-    4       Afghanistan
-               ...     
-    1699       Zimbabwe
-    1700       Zimbabwe
-    1701       Zimbabwe
-    1702       Zimbabwe
-    1703       Zimbabwe
-    Name: country, Length: 1704, dtype: object
-
-
-
 ## Filtering DataFrame
 
 1. Select the most recent year. 
-
 
 ```python
 df["year"].max()
 ```
 
-
-
-
     2007
-
 
 Exclude all previous years and keep 2007 only with a query. 
 
 ```python
 df.query('year == 2007')
 ```
-
-
 
 
 <div>
@@ -930,8 +857,8 @@ df2[idx]
 </table>
 </div>
 
-So, Turkey had the lowest life expectancy in Europe according to the example dataset.
-Finally, a quick plot of the results with Pandas-only way (i.e. we shall not use `plotly` module).
+Ta da! It is **Turkey** that had the lowest life expectancy in Europe according to the example dataset.
+Finally, a quick plot of the results with Pandas-only way (i.e. we shall not use `plotly`'s advanced capabilities).
 
 ```python
 ax = df2[idx].plot.bar(x='country', y='lifeExp', rot=0)
