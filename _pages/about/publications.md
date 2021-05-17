@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: Publications
 permalink: /publications/
 subtitle: selected list
@@ -36,7 +37,7 @@ Fábián, Z. (2005). Törésvonalak és a politikai ideológiai azonosulás szer
 
 Bernát, A., Fábián, Z., Galácz, A., & Ságvári, B. (2008). Esély és digitális írástudás: médiafogyasztási- és digitális eszközhasználati státusz-csoportok Magyarországon. Információs Társadalom, 8(2), 110–133. [Open (pdf)]({{ site.baseurl }}/assets/pubs/Bernát et al. - 2008 - Esély és digitális írástudás médiafogyasztási- és digitális eszközhasználati státusz-csoportok.pdf)
 
-Fábián, Z., & Tóth, I. G. (2008). [Lófogók és csirkekötők: pártpreferencia csoportok azonosulása és attitűdjei]({{ site.baseurl }}/assets/pubs/Fábián, Tóth - 2008 - Lófogók és csirkekötők pártpreferencia csoportok azonosulása és attitűdjei.pdf). In I. G. Tóth & P. Szivós (Szerk.), *Köz, teher, elosztás* (o. 203–219).  The full-text publication is available at [TÁRKI](http://www.tarki.hu/adatbank-h/kutjel/pdf/b193.pdf) and at the [Hungarian Electroni Library](http://mek.oszk.hu/13400/13425/index.phtml). [Open (pdf)]({{ site.baseurl }}/assets/pubs/Fábián, Tóth - 2008 - Lófogók és csirkekötők pártpreferencia csoportok azonosulása és attitűdjei.pdf). 
+Fábián, Z., & Tóth, I. G. (2008). [Lófogók és csirkekötők: pártpreferencia csoportok azonosulása és attitűdjei]({{ site.baseurl }}/assets/pubs/Fábián, Tóth - 2008 - Lófogók és csirkekötők pártpreferencia csoportok azonosulása és attitűdjei.pdf). In I. G. Tóth & P. Szivós (Szerk.), *Köz, teher, elosztás* (o. 203–219).  The full-text publication is available at [TÁRKI](http://www.tarki.hu/adatbank-h/kutjel/pdf/b193.pdf) and at the [Hungarian Electronic Library](http://mek.oszk.hu/13400/13425/index.phtml). [Open (pdf)]({{ site.baseurl }}/assets/pubs/Fábián, Tóth - 2008 - Lófogók és csirkekötők pártpreferencia csoportok azonosulása és attitűdjei.pdf). 
 
 Toš, N., Müller, K. H., Fábián, Z., Krejci, J., & Zielinski, M. (Eds.). (2009). Three Roads to Comparative Research: Analytical, Visual and Morphological. Vienna: Edition Echoraum.
 

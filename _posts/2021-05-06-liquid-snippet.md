@@ -6,8 +6,7 @@ tags: [jekyll, liquid]
 classes: wide
 ---
 
-This liquid snippet will list all posts that contains "data visualization" category in Jekyll front matter. 
-Cf. [this page]({{ site.baseurl }}/_pages/cats/data-vis/) It also adds icons for tags and plot types.
+This liquid snippet will list all posts that contains "data visualization" category in Jekyll front matter. It also adds icons for tags and plot types. Cf. [this page]({{ site.baseurl }}/_pages/cats/data-vis/)
 
 {: .full}
 {% raw %}
