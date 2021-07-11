@@ -12,7 +12,7 @@ lang: en
 Recently, I found a [post](https://rpubs.com/muuankarski/210495) on mapping Eurostat data, which was written in 2016 by [Markus Kainu](https://github.com/muuankarski). It is not too old, but an important function within `{eurostat}` package became obsolote since then. `merge_eurostat_geodata()` have been abondoned because of switching to [simple features](https://r-spatial.github.io/sf/articles/sf1.html) standard. After some searching I found a solution at this issue[^issue]. (It also turned out that Markus Kainu is one of the devs of `{eurostat}`.) So, I made some minor changes in the original code base in order to reproduce and update some of the maps on NUTS2 (regional) level. 
 
 Here they are (Click to enlarge image):
-{% include image-gallery.html folder="/assets/img/20-08-26-eurostat" %}
+{% include image-gallery.html folder="../assets/img/20-08-26-eurostat" %}
 
 I think they are quite pretty, although not fully comparable due to different value categories.
 
@@ -42,5 +42,9 @@ More info:
 
 Full source code:
 
-<script src="https://gist.github.com/ZGFabian/2171e506ac444aeb7ed3edb80fe97574.js"></script>
+<iframe
+  src="https://carbon.now.sh/embed/2171e506ac444aeb7ed3edb80fe97574"
+  style="width: 1024px; height: 2457px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
 
