@@ -1,9 +1,15 @@
 # install.package("pacman")
-pacman::p_load(ggplot2, magick) # this will load (and install if required) libraries
+pacman::p_load(ggplot2, magick) ## this will load (and install if required) libraries
+si <- sessionInfo() ## Info on OS, obscure libraries (BLAS, LAPACK), R versions and attached packages
+print(si, locale = FALSE) ## Omit irrelevant and boring locale info
 p <- ggplot(mtcars, aes(wt, mpg, color = as.factor(cyl))) +
   geom_point()
 p
-dev.off()
+dev.size("in")
+X11(width = 3.5, height = 3.5)
+p
+dev.size("in")
+?mtcars
 ggsave("p.png", p)
 ## Saving 7 x 7 in image
 system(command = "file p.png")
